@@ -18,7 +18,7 @@ const AddCard = () => {
       createDate: Date | null;
    }
 
-   const [ error, setError ] = useState<string>('')
+   const [ error, setError ] = useState<string | null>(null)
    const [ data, setData ] = useState<dataSet>({
       name: '',
       description: '',
@@ -32,8 +32,8 @@ const AddCard = () => {
    }, [selectCard])
 
    const handleChange = (event: React.ChangeEvent<any>) => {
-      let name = event.target.name
-      let value = event.target.value
+      let name:string = event.target.name
+      let value:any = event.target.value
 
       setData((prevState) => ({
          ...prevState,
@@ -49,12 +49,20 @@ const AddCard = () => {
          setError('Необходимо заполнить все поля.')
          return null
       }
-      
+
+      data.name = data.name.trim().replace(/<\/?[^>]+(>|$)/g, "")
+      data.description = data.description.trim().replace(/<\/?[^>]+(>|$)/g, "")
+
       if ( data.id ) {
          dispatch(updateCard(data))
       } else {
          dispatch(addCard(data))
       }
+   }
+
+   const closeModal = () => {
+      dispatch(setModal(false))
+      setError(null)
    }
 
    return (
@@ -69,7 +77,7 @@ const AddCard = () => {
             aria-describedby="transition-modal-description"
             className="modal"
             open={showModal}
-            onClose={() => dispatch(setModal(false))}
+            onClose={closeModal}
             closeAfterTransition
             BackdropComponent={Backdrop}
             BackdropProps={{
@@ -80,7 +88,7 @@ const AddCard = () => {
                <div className="modal-content">
                   <h2>Добавить задачу</h2>
                   <div>
-                     <TextField label="Название задачи" name="name" value={data.name} onChange={handleChange} variant="outlined" />
+                     <TextField label="Название задачи" name="name" value={data.name} onChange={handleChange} variant="outlined" autoComplete="off" />
                   </div>
                   <div>
                      <TextField multiline rows={4} name="description" value={data.description} onChange={handleChange} label="Описание задачи" variant="outlined" />
@@ -104,7 +112,7 @@ const AddCard = () => {
                   </div>
                   {error && <div className="modal-error">{error}</div>}
                   <div className="modal-buttons">
-                     <Button variant="outlined" onClick={() => dispatch(setModal(false))}> Назад</Button>
+                     <Button variant="outlined" onClick={closeModal}> Назад</Button>
                      <Button variant="outlined" color="primary" onClick={handleClick}>Добавить</Button>
                   </div>
                </div>

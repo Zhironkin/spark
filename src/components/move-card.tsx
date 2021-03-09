@@ -4,7 +4,7 @@ import { cardsSelector, updateCard, editCard } from '../slices/cardsSlice';
 import { Menu, MenuItem, IconButton } from '@material-ui/core';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-const ITEM_HEIGHT = 48;
+const ITEM_HEIGHT:number = 48;
  
 const MoveCard = (props: {card:any}) => {
 
@@ -12,7 +12,7 @@ const MoveCard = (props: {card:any}) => {
    const { CARD_STATUS } = useSelector(cardsSelector)
 
    const card = { ...props.card }
-   const card_status = props.card.status
+   const card_status:number = props.card.status
    const [ anchorEl, setAnchorEl ] = useState<null | HTMLElement>(null)
    const open = Boolean(anchorEl)
  

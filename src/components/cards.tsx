@@ -60,7 +60,7 @@ const Cards = (props: {list: Array<any>}) => {
    }
 
    const renderTask = (items:Array<any>) => items.map(item => {
-      let date = new Date(item.createDate)
+      let date:Date = new Date(item.createDate)
 
       return (
          <div key={item.id.toString()} className="card-list" onClick={() => setSelectCard(item.id)}>
