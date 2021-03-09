@@ -1,0 +1,52 @@
+{
+  "cards": [
+    {
+      "id": 0,
+      "name": "Task 1",
+      "description": "First create task",
+      "priority": 1,
+      "status": 0,
+      "createDate": "2021-03-08T19:31:11.771Z"
+    },
+    {
+      "name": "Задача 2",
+      "description": "Описание задачи",
+      "priority": 0,
+      "status": 2,
+      "createDate": "2021-03-09T07:15:05.563Z",
+      "id": 1
+    },
+    {
+      "name": "Задача 6",
+      "description": "Id values are not mutable. Any id value in the body of your PUT or PATCH request will be ignored. Only a value set in a POST request will be respected, but only if not already taken.\nA POST, PUT or PATCH request should include a Content-Type: application/json header to use the JSON in the request body. Otherwise it will return a 2XX status code, but without changes being made to the data.",
+      "priority": 2,
+      "status": 1,
+      "createDate": "2021-03-09T12:02:59.403Z",
+      "id": 2
+    },
+    {
+      "name": "Задача 3",
+      "description": "Еще описание задачи",
+      "priority": 0,
+      "status": 0,
+      "createDate": "2021-03-09T09:40:16.314Z",
+      "id": 3
+    },
+    {
+      "name": "Задача 4",
+      "description": "However, a better approach might be to add a string index signature if you’re sure that the object can have some extra properties that are used in some special way. ",
+      "priority": 1,
+      "status": 1,
+      "createDate": "2021-03-09T09:51:28.011Z",
+      "id": 4
+    },
+    {
+      "name": "Задача 5",
+      "description": "Еще описание задачи",
+      "priority": 2,
+      "status": 0,
+      "createDate": "2021-03-09T09:56:59.723Z",
+      "id": 5
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+
+  .app-header {
+    display: flex;
+    margin-bottom: 1rem;
+
+    .select-box {
+      width: 200px;
+      margin-right: 1rem;
+    }
+  }
+
+  .loader {
+    text-align: center;
+  }
+
+  .if-loading-error {
+    font-size: 1.2rem;
+    line-height: 25px;
+
+    span {
+      color: tomato;
+    }
+  }
+
+  .card-list {
+    margin-top: 1rem;
+    border-radius: 4px;
+    background-color: #eee;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    overflow: hidden;
+
+    .card-list-title {
+      display: flex;
+      align-items: center;
+      border-top: 1px solid #eee;
+  
+      p {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-right: .5rem;
+      }
+
+      > div {
+        margin-left: auto;
+      }
+    }
+
+    .card-list-description {
+      margin-top: 1rem;
+
+      span {
+        font-weight: 600;
+      }
+    }
+
+    .card-list-date {
+      margin-top: 1rem;
+    }
+
+    .card-list-priority {
+      display: block;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      margin-right: .5rem;
+
+      &.priority-0 {
+        background-color: limegreen;
+      }
+
+      &.priority-1 {
+        background-color: lightsalmon;
+      }
+
+      &.priority-2 {
+        background-color: tomato;
+      }
+    }
+  }
+
+  .menu-icon {
+    padding: 5px;
+  }
+
+  .MuiCardContent-root {
+    padding: 1rem !important;
+  }
+
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modal-content {
+    width: 600px;
+    border-radius: 4px;
+    padding: 2rem;
+    background-color: #fff;
+
+    .modal-error {
+      color: red;
+    }
+
+    .modal-buttons {
+      text-align: right;
+
+      > button:first-child {
+        margin-right: 1rem;
+      }
+    }
+
+    div {
+      width: 100%;
+    }
+
+    > div:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
