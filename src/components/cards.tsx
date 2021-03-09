@@ -87,7 +87,7 @@ const Cards = (props: {list: Array<any>}) => {
    })
 
    return (
-      <div>
+      <div className="app-cards">
          {renderTasks()}
       </div>
    )

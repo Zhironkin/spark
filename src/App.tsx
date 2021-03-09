@@ -10,16 +10,16 @@ import ShowDialog from './components/add-card';
 const App = () => {
    const dispatch = useDispatch()
    const { cards, loading, hasErrors, SORT, selectSort } = useSelector(cardsSelector)
-   
+
    useEffect(() => {
       dispatch(fetchRecipes(selectSort))
    }, [dispatch, selectSort])
-   
+
 
    const renderCards = () => {
       if ( loading ) return <Loader />
       if ( hasErrors ) return <IfError />
-      
+
       return <Cards list={cards} />
    }
 
@@ -34,7 +34,7 @@ const App = () => {
    return (
       <div className="App">
          <Container>
-            { !hasErrors && 
+            { !hasErrors &&
                <div className="app-header">
                   <FormControl variant="outlined" className="select-box">
                      <InputLabel id="select-outlined">Сортировать</InputLabel>
@@ -54,6 +54,7 @@ const App = () => {
             }
             {renderCards()}
          </Container>
+         <div className="author">Zhironkin N.</div>
       </div>
    )
 }

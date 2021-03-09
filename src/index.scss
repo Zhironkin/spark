@@ -16,7 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 2rem;
+  padding-top: 3rem;
 
   .app-header {
     display: flex;
@@ -53,7 +53,7 @@ body {
       display: flex;
       align-items: center;
       border-top: 1px solid #eee;
-  
+
       p {
         margin-top: 0;
         margin-bottom: 0;
@@ -79,8 +79,8 @@ body {
 
     .card-list-priority {
       display: block;
-      width: 15px;
-      height: 15px;
+      min-width: 15px;
+      min-height: 15px;
       border-radius: 50%;
       margin-right: .5rem;
 
@@ -106,6 +106,12 @@ body {
     padding: 1rem !important;
   }
 
+}
+
+.author {
+  position: fixed;
+  top: 15px;
+  right: 15px;
 }
 
 .modal {
@@ -148,3 +154,19 @@ body {
     }
   }
 }
+
+@media (max-width: 750px) {
+  .App {
+    .app-cards {
+      > div {
+        flex-direction: column;
+        align-items: center;
+
+        > div {
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+} 
