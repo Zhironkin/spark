@@ -59,6 +59,10 @@ const Cards = (props: {list: Array<any>}) => {
       )
    }
 
+   const dateFormat = (item:number) => {
+      return item.toString().length === 1 ? `0${item}` : item
+   }
+
    const renderTask = (items:Array<any>) => items.map(item => {
       let date:Date = new Date(item.createDate)
 
@@ -77,9 +81,9 @@ const Cards = (props: {list: Array<any>}) => {
                </div>
                <div className="card-list-date">
                   <span>Дата добавления: </span>
-                  {date.getDate()}.{date.getMonth()}.{date.getFullYear()}
+                  {dateFormat(date.getDate())}.{dateFormat(date.getMonth())}.{date.getFullYear()}
                   {' - '}
-                  {date.getHours()}:{date.getMinutes()}:{date.getSeconds()}
+                  {dateFormat(date.getHours())}:{dateFormat(date.getMinutes())}:{date.getSeconds()}
                </div>
             </AnimateHeight>
          </div>
